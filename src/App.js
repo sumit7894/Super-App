@@ -1,10 +1,23 @@
 import './App.css';
-import Banner from './Components/Home/Banner';
-
+import Genre from './Pages/Genre';
+import Home from './Pages/Home';
+import { RouterProvider,createBrowserRouter } from 'react-router-dom';
 function App() {
+  const appRouter = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element:<Home/>
+      },
+      {
+        path:"/genre",
+        element:<Genre/>
+      }
+    ]
+  );
   return (
     <div className="App">
-      <Banner/>
+      <RouterProvider router={appRouter}/>
     </div>
   );
 }
