@@ -1,4 +1,5 @@
 import './App.css';
+import Browse from './Pages/Browse';
 import Genre from './Pages/Genre';
 import Home from './Pages/Home';
 import { RouterProvider,createBrowserRouter } from 'react-router-dom';
@@ -12,6 +13,10 @@ function App() {
       {
         path:"/genre",
         element:<Genre/>
+      },
+      {
+        path:"/browse",
+        element:<Browse/>
       }
     ]
   );

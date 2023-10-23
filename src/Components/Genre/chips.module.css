@@ -1,0 +1,18 @@
+.selectedChoice{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #72DB73;
+    border-radius: 31px;
+    height: 1rem;
+    width: 6.8rem;
+    height: 2rem;
+    margin-right: 1rem;
+    margin-bottom: 0.8rem;
+    font-family: 'Roboto';
+    color: white;
+}
+.alert{
+    color: red;
+    font-family: 'Roboto';
+}
