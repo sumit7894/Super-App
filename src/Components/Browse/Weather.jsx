@@ -1,36 +1,77 @@
 import React, { useEffect, useState } from 'react'
 
 const Weather = () => {
+  const lineStyle = {
+    borderLeft:"1px solid #FFFFFF",
+    height:"70px",
+  };
   const [date,setDate] = useState();
   const [time, setTime] = useState();
-    useEffect(()=>{
-      const date = new Date();
-      var hour = date.getHours();
-      var minutes = date.getMinutes();
-      const amOrpm = hour>=12 ? 'PM' : 'AM';
-      hour = hour>12 ? hour-12 : hour;
-      minutes = minutes < 10 ? "0" + minutes : minutes;
-      const formattedTime = hour + ":" + minutes + " " + amOrpm;
-      setTime(formattedTime);
-    },[]);
-    useEffect(()=>{
-    const today = new Date();
-    const year = today.getFullYear();
-    var month = today.getMonth();
-    var date = today.getDate();
-    date = date<10 ? "0" + date: date;
-    month = month<10 ? "0" + month : month;
-    const formattedDate = date + "-" + month + "-" + year;
-    setDate(formattedDate);
-    },[]);
+  const [weatherData,setWeatherData] = useState();
+  useEffect(()=>{
+    fetchWeatherData();
+  },[])
+  const fetchWeatherData = async()=>{
+    const data = await fetch(
+      "https://api.weatherapi.com/v1/current.json?key=6f71fb652208469a9e8131144232410&q=India&aqi=no"
+    );
+    const JSON = await data.json();
+    setWeatherData(JSON);
+  }
+  useEffect(()=>{
+    const date = new Date();
+    var hour = date.getHours();
+    var minutes = date.getMinutes();
+    const amOrpm = hour>=12 ? 'PM' : 'AM';
+    hour = hour>12 ? hour-12 : hour;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    const formattedTime = hour + ":" + minutes + " " + amOrpm;
+    setTime(formattedTime);
+  },[]);
+  useEffect(()=>{
+  const today = new Date();
+  const year = today.getFullYear();
+  var month = today.getMonth();
+  var date = today.getDate();
+  date = date<10 ? "0" + date: date;
+  month = month<10 ? "0" + month : month;
+  const formattedDate = date + "-" + month + "-" + year;
+  setDate(formattedDate);
+  },[]);
+  console.log(weatherData);
   return (
-    <div style={{height:"40%",width:"100%",backgroundColor:"red",marginTop:"1%",borderRadius:"12px"}}>
+    <div style={{height:"40%",width:"100%",fontFamily:"Roboto",backgroundColor:"#101744",marginTop:"1%",borderRadius:"12px",color:"white"}}>
         <div style={{backgroundColor:"#FF4ADE",display:"flex",justifyContent:"space-around",
         height:"30%",width:"100%",borderTopLeftRadius:"12px",borderTopRightRadius:"12px",alignItems:"center"
-        ,fontSize:"2rem",color:"white",fontFamily:"Roboto",fontWeight:"600"
+        ,fontSize:"2rem",fontWeight:"600"
         }}>
             <div>{date}</div>
             <div>{time}</div>
+        </div>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-evenly",color:"white"}}>
+          <div>
+            <img src={weatherData.current.condition.icon}
+            style={{width:"6rem",height:"6rem",}} 
+            alt='cloud'/>
+            <div style={{fontSize:"1.6rem",marginLeft:"18px"}}>
+            {weatherData.current.condition.text}
+            </div>
+          </div>
+          <div style={lineStyle}></div>
+          <div>
+            <span style={{fontSize:"2.4rem"}}>
+              {weatherData.current.feelslike_c}<span>&deg;C</span></span>
+              <div style={{marginTop:"15%"}}><span>{weatherData.current.pressure_mb}m bar</span></div>
+              <div>Pressure</div>
+          </div>
+          <div style={lineStyle}></div>
+          <div>
+            <div><span>{weatherData.current.wind_kph}km/h</span></div>
+            <div>Wind</div>
+            <div style={{marginTop:"15%"}}><span>{weatherData.current.humidity}%</span></div>
+            <div>Humidity</div>
+          </div>
+          <div></div>
         </div>
     </div>
   )
