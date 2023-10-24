@@ -1,0 +1,17 @@
+.html,body{
+    margin: 0;
+    padding: 0;
+}
+.body{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+    display: flex;
+}
+.left{
+    height: 82%;
+    width: 60%;
+    position: absolute;
+    top: 10%;
+    left: 6%;
+}

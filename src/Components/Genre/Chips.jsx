@@ -7,11 +7,11 @@ const Chips = ({categories,setCategories,color}) => {
   }
   
   return (
-    <div style={{display:"flex",flexWrap:"wrap",width:"100%"}}>
+    <div style={{display:"flex",flexWrap:"wrap",width:"100%",justifyContent:"center"}}>
       {categories.map((genre)=>
       <div className={Styles.selectedChoice} key={genre}>
       {genre} 
-      <button style={{border:'none',backgroundColor:"#72DB73"}} onClick={()=>handleClick(genre)}>
+      <button style={{border:'none',backgroundColor:"#148A08"}} className={Styles.cross} onClick={()=>handleClick(genre)}>
         X 
       </button>
     </div>

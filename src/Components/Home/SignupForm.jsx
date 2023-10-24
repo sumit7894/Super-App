@@ -5,7 +5,7 @@ import styles from "./Form.module.css";
 const SignupForm = () => {
     const [formValues,setFormValues] = useState({
         check: false,
-        name:" ",
+        name:"",
         username:"",
         mail:"",
         mobile:"",
