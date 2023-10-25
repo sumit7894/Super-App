@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-
+import pressure from "../../assets/images/pressure.png";
 const Weather = () => {
   const lineStyle = {
     borderLeft:"1px solid #FFFFFF",
@@ -38,7 +38,6 @@ const Weather = () => {
   const formattedDate = date + "-" + month + "-" + year;
   setDate(formattedDate);
   },[]);
-  console.log(weatherData);
   return (
     <div style={{height:"40%",width:"100%",fontFamily:"Roboto",backgroundColor:"#101744",marginTop:"1%",borderRadius:"12px",color:"white"}}>
         <div style={{backgroundColor:"#FF4ADE",display:"flex",justifyContent:"space-around",
@@ -50,25 +49,30 @@ const Weather = () => {
         </div>
         <div style={{display:"flex",alignItems:"center",justifyContent:"space-evenly",color:"white"}}>
           <div>
-            <img src={weatherData.current.condition.icon}
+            <div><img src={weatherData?.current?.condition?.icon}
             style={{width:"6rem",height:"6rem",}} 
-            alt='cloud'/>
-            <div style={{fontSize:"1.6rem",marginLeft:"18px"}}>
-            {weatherData.current.condition.text}
+            alt='cloud'/></div>
+            <div style={{fontSize:"1.6rem"}}>
+            {weatherData?.current?.condition?.text}
             </div>
           </div>
           <div style={lineStyle}></div>
           <div>
             <span style={{fontSize:"2.4rem"}}>
-              {weatherData.current.feelslike_c}<span>&deg;C</span></span>
-              <div style={{marginTop:"15%"}}><span>{weatherData.current.pressure_mb}m bar</span></div>
+              {weatherData?.current?.feelslike_c}<span>&deg;C</span></span>
+              <div style={{display:"flex",marginTop:"10%",justifyContent:"center",alignItems:"center",margin:"2%"}}>
+                <div><img src={pressure} alt='pressure_icon'/></div>
+              <div>
+              <div style={{}}><span>{weatherData?.current?.pressure_mb}m bar</span></div>
               <div>Pressure</div>
+              </div>
+              </div>
           </div>
           <div style={lineStyle}></div>
           <div>
-            <div><span>{weatherData.current.wind_kph}km/h</span></div>
+            <div><span>{weatherData?.current?.wind_kph}km/h</span></div>
             <div>Wind</div>
-            <div style={{marginTop:"15%"}}><span>{weatherData.current.humidity}%</span></div>
+            <div style={{marginTop:"15%"}}><span>{weatherData?.current?.humidity}%</span></div>
             <div>Humidity</div>
           </div>
           <div></div>

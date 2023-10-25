@@ -7,11 +7,18 @@
     width: 100vw;
     background-color: black;
     display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .left{
     height: 82%;
     width: 55%;
-    position: absolute;
-    top: 10%;
-    left: 6%;
+    margin-left: 6%;
+}
+.right{
+    width: 25%;
+    margin-left: 4%;
+    background-color: white;
+    height: 82%;
+    border-radius: 12px;
 }

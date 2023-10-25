@@ -8,7 +8,7 @@ const Info = () => {
         width:"98%", height:"60%",backgroundColor:"#5746EA", borderRadius:"34px",display:"flex",alignItems:"center"}}>
         <img src={userImage} alt='user' style={{height:"98%"}}/>
         <div style={{height:"90%",width:"75%",display:"flex",
-        flexDirection:"column",marginLeft:"1.4%",padding:"8px",fontFamily:"Roboto"}}>
+        flexDirection:"column",marginLeft:"2%",padding:"8px",fontFamily:"Roboto"}}>
         <span style={{color:"white",fontSize:"2rem"}}>{info.name}</span>
         <span style={{color:"white",fontSize:"2rem"}}>{info.mail}</span>
         <span style={{color:"white",fontSize:"3rem"}}>{info.username}</span>
