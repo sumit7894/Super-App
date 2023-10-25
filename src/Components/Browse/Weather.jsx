@@ -39,26 +39,26 @@ const Weather = () => {
   setDate(formattedDate);
   },[]);
   return (
-    <div style={{height:"40%",width:"100%",fontFamily:"Roboto",backgroundColor:"#101744",marginTop:"1%",borderRadius:"12px",color:"white"}}>
+    <div style={{height:"27%",width:"100%",fontFamily:"Roboto",backgroundColor:"#101744",marginTop:"1%",borderRadius:"12px",color:"white"}}>
         <div style={{backgroundColor:"#FF4ADE",display:"flex",justifyContent:"space-around",
         height:"30%",width:"100%",borderTopLeftRadius:"12px",borderTopRightRadius:"12px",alignItems:"center"
-        ,fontSize:"2rem",fontWeight:"600"
+        ,fontSize:"1.4rem",fontWeight:"600"
         }}>
             <div>{date}</div>
             <div>{time}</div>
         </div>
-        <div style={{display:"flex",alignItems:"center",justifyContent:"space-evenly",color:"white"}}>
+        <div style={{display:"flex",alignItems:"center",justifyContent:"space-evenly",color:"white",marginTop:"2%"}}>
           <div>
             <div><img src={weatherData?.current?.condition?.icon}
-            style={{width:"6rem",height:"6rem",}} 
+            style={{width:"4rem",height:"4rem",}} 
             alt='cloud'/></div>
-            <div style={{fontSize:"1.6rem"}}>
+            <div style={{fontSize:"1.2rem"}}>
             {weatherData?.current?.condition?.text}
             </div>
           </div>
           <div style={lineStyle}></div>
-          <div>
-            <span style={{fontSize:"2.4rem"}}>
+          <div style={{display:"flex",flexDirection:"column",alignItems:"center"}}>
+            <span style={{fontSize:"2rem"}}>
               {weatherData?.current?.feelslike_c}<span>&deg;C</span></span>
               <div style={{display:"flex",marginTop:"10%",justifyContent:"center",alignItems:"center",margin:"2%"}}>
                 <div><img src={pressure} alt='pressure_icon'/></div>
