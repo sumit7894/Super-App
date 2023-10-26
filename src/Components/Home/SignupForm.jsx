@@ -73,25 +73,25 @@ const SignupForm = () => {
                         type='text' placeholder='Name' name='name'
                         onChange={(e)=>handleChange(e)}
                         /> <br/>
-                        <label style={{visibility: nameError ? "visible": "hidden" }}>Field is required</label><br/>
+                        <label style={{visibility: nameError ? "visible": "hidden" ,fontFamily:"Dm Sans"}}>Field is required</label><br/>
                         <input
                         style={{border: userNameError ? 'red':'black'}}
                         type='text' placeholder='UserName' name='username'
                         onChange={(e)=>handleChange(e)}
                         /><br/>
-                        <label style={{visibility: userNameError ? "visible": "hidden" }}>Field is required</label><br/>
+                        <label style={{visibility: userNameError ? "visible": "hidden" ,fontFamily:"Dm Sans"}}>Field is required</label><br/>
                         <input
                         style={{border: emailError ? 'red':'black'}}
                         type='email' placeholder='Email' name='mail'
                         onChange={(e)=>handleChange(e)}
                         /><br/>
-                        <label style={{visibility: emailError ? "visible": "hidden" }}>Field is required</label><br/>
+                        <label style={{visibility: emailError ? "visible": "hidden" ,fontFamily:"Dm Sans"}}>Field is required</label><br/>
                         <input
                         style={{border: mobileError ? 'red':'black'}}
                         type='tel' placeholder='Mobile' name='mobile'
                         onChange={(e)=>handleChange(e)}
                         /><br/>
-                        <label style={{visibility: mobileError ? "visible": "hidden" }}>Field is required</label><br/>
+                        <label style={{visibility: mobileError ? "visible": "hidden" ,fontFamily:"Dm Sans"}}>Field is required</label><br/>
                         <div className={styles.checkBoxDiv}>
                         <input type='checkbox' 
                         className={styles.checkbox}
@@ -102,7 +102,7 @@ const SignupForm = () => {
                         />
                         Share my registration data with Superapp
                         </div>
-                        <label style={{visibility: checkBoxError ? "visible": "hidden" }}>Check this box if you want to proceed</label><br/>
+                        <label style={{visibility: checkBoxError ? "visible": "hidden" ,fontFamily:"Dm Sans"}}>Check this box if you want to proceed</label><br/>
                         <button className={styles.signupBtn}
                         onClick={handleSubmit}
                         >SIGN UP</button>
