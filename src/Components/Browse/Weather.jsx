@@ -39,7 +39,7 @@ const Weather = () => {
   setDate(formattedDate);
   },[]);
   return (
-    <div style={{height:"27%",width:"100%",fontFamily:"Roboto",backgroundColor:"#101744",marginTop:"1%",borderRadius:"12px",color:"white"}}>
+    <div style={{height:"27%",width:"90%",fontFamily:"Roboto",backgroundColor:"#101744",borderRadius:"12px",color:"white"}}>
         <div style={{backgroundColor:"#FF4ADE",display:"flex",justifyContent:"space-around",
         height:"30%",width:"100%",borderTopLeftRadius:"12px",borderTopRightRadius:"12px",alignItems:"center"
         ,fontSize:"1.4rem",fontWeight:"600"

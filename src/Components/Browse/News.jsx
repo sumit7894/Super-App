@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 const News = () => {
-    const [newsData,setNewsData] = useState();
+    const [newsData,setNewsData] = useState('');
     const [date,setDate] = useState();
     const [time,setTime] = useState();
     useEffect(()=>{
@@ -12,9 +12,14 @@ const News = () => {
             "https://newsapi.org/v2/everything?q=tesla&from=2023-09-24&sortBy=publishedAt&apiKey=205e5a253f5a458a943e98f7213288a2"
         );
         const json = await data.json();
-        setNewsData(json);
+        if(json.status === 'error'){
+            setNewsData("");
+        }
+        else{
+            setNewsData(json?.articles[0]);
+        }
     }   
-    console.log(newsData?.articles[0]);
+    
     useEffect(()=>{
         const date = new Date();
         var hour = date.getHours();
@@ -38,11 +43,13 @@ const News = () => {
   return (
     <div>
         <div style={{position:"relative"}}>
-        <img src={newsData?.articles[0]?.urlToImage} 
-        style={{objectFit:"fill",height:"50vh",width:"23vw",borderTopLeftRadius:"12px",borderTopRightRadius:"12px"}}alt='pic'/>
+        <img src={newsData?.urlToImage} 
+        style=
+        {{objectFit:"fill",height:"50vh",width:"23vw",borderTopLeftRadius:"12px",borderTopRightRadius:"12px"}}
+        alt='pic'/>
         
         <div style={{backgroundColor:"rgba(0, 0, 0, 0.74)",height:"40%",width:"100%",position:"absolute",bottom:"1%",fontFamily:"Roboto"}}>
-            <div style={{color:"white",fontFamily:"Roboto",fontSize:"1.25rem",marginTop:"5%",marginLeft:"5%"}}>{newsData?.articles[0]?.title}</div>
+            <div style={{color:"white",fontFamily:"Roboto",fontSize:"1.25rem",marginTop:"5%",marginLeft:"5%"}}>{newsData?.title}</div>
             <div style={{color:"white",marginLeft:"5%",marginTop:"4%",display:"flex"}}>
                 <div style={{borderRight:"1px solid white",marginRight:"5px",paddingRight:"5px"}}>{date}</div>
                 <div style={{marginRight:"5px"}}>{time}</div>
@@ -50,7 +57,7 @@ const News = () => {
         </div>
         </div>
         <div style={{margin:"3%",color:"black",fontFamily:"Roboto",wordSpacing:"60%"}}>
-            {newsData?.articles[0]?.content}
+            {newsData?.content}
         </div>
     </div>
   )

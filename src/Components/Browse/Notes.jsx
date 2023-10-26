@@ -10,8 +10,8 @@ const Notes = () => {
     };
   return (
     <div 
-    style={{height:"69vh",width:"50vw",backgroundColor:"#F1C75B",
-    marginTop:"1%",borderRadius:"20px",position:"relative"}}>
+    style={{height:"55vh",width:"39vw",backgroundColor:"#F1C75B",
+    borderRadius:"20px",position:"relative",top:"-16%",left:"-4%"}}>
     <div style={{
     position:"absolute",left:"8%",color:"black",fontSize:"1.6rem",
     fontFamily:"Roboto",top:"8%",fontWeight:"600",letterSpacing:"2%"

@@ -8,19 +8,21 @@
     background-color: black;
     display: flex;
     flex-direction: row;
-    /* align-items: center; */
+    align-items: center;
+    justify-content: center;
 }
 .left{
     height: 91%;
     width: 67%;
-    margin-left: 6%;
-    margin-right: 1%;
+    margin-left: 2%;
+    /* margin-right: 1%; */
 }
 .right{
-    width: 23%;
-    margin-left: 2%;
+    width: 24%;
+    left: -2%;
+    position: relative;
     background-color: white;
-    height: 91%;
+    height: 82%;
     border-radius: 12px;
 }
 
