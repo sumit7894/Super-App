@@ -69,25 +69,25 @@ const SignupForm = () => {
                 <div className={styles.formDiv}>
                     <form onSubmit={(e)=>(e.preventDefault())}>
                         <input 
-                        style={{borderColor: nameError ? 'red':'black'}}
+                        style={{border: nameError ? 'red':'black'}}
                         type='text' placeholder='Name' name='name'
                         onChange={(e)=>handleChange(e)}
                         /> <br/>
                         <label style={{visibility: nameError ? "visible": "hidden" }}>Field is required</label><br/>
                         <input
-                        style={{borderColor: userNameError ? 'red':'black'}}
+                        style={{border: userNameError ? 'red':'black'}}
                         type='text' placeholder='UserName' name='username'
                         onChange={(e)=>handleChange(e)}
                         /><br/>
                         <label style={{visibility: userNameError ? "visible": "hidden" }}>Field is required</label><br/>
                         <input
-                        style={{borderColor: emailError ? 'red':'black'}}
+                        style={{border: emailError ? 'red':'black'}}
                         type='email' placeholder='Email' name='mail'
                         onChange={(e)=>handleChange(e)}
                         /><br/>
                         <label style={{visibility: emailError ? "visible": "hidden" }}>Field is required</label><br/>
                         <input
-                        style={{borderColor: mobileError ? 'red':'black'}}
+                        style={{border: mobileError ? 'red':'black'}}
                         type='tel' placeholder='Mobile' name='mobile'
                         onChange={(e)=>handleChange(e)}
                         /><br/>
